@@ -3,8 +3,8 @@ const cors = require("cors");
 
 require("./db");
 
-const Project = require("./Project");
-const Contact = require("./Contact");
+const Project = require("./project");
+const Contact = require("./contact");
 
 const app = express();
 
