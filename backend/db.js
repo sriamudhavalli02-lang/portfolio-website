@@ -1,15 +1,13 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/portfolio");
+const MONGO_URI = process.env.MONGO_URI;
 
-const db = mongoose.connection;
+mongoose.connect(MONGO_URI)
+    .then(() => {
+        console.log("MongoDB Connected");
+    })
+    .catch((err) => {
+        console.log("MongoDB Connection Error:", err);
+    });
 
-db.on("connected", () => {
-    console.log("MongoDB Connected");
-});
-
-db.on("error", (err) => {
-    console.log(err);
-});
-
-module.exports = db;
+module.exports = mongoose.connection;
