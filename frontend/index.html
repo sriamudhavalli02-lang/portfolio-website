@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1>0">
+    <title>My Portfolio</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+    <h2 class="logo">SA</h2>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a  href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+<section id="home" class="hero" data-aos="fade-up">
+
+<div class="hero-content">
+
+<div class="hero-text">
+
+<h3>Hello 👋</h3>
+
+<h1>I'm Sri Amudhavalli</h1>
+
+<p id="typing"></p>
+
+<div class="hero-btns">
+<button id="projectBtn"
+class="hero-btn">View Projects</button>
+
+<a href="resume.pdf" download>
+<button class="hero-btn">Download resume</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="profile.jpg" alt="Profile">
+
+</div>
+
+</div>
+
+</section>
+   <section id="about" data-aos="fade-right">
+
+<h2>About Me</h2>
+
+<p>
+
+I am Sri Amudhavalli, a Computer Science and Business Systems student.
+
+I love developing Full Stack Web Applications using HTML, CSS, JavaScript, Node.js, Express.js and MongoDB.
+
+I enjoy learning new technologies and solving real-world problems.
+
+</p>
+<section id="education" data-aos="fade-up">
+
+    <h2>Education</h2>
+
+    <div class="edu-card">
+
+        <h3>B.Tech - Computer Science and Business Systems</h3>
+
+        <p><strong>College:</strong> K. Ramakrishnan College of Engineering</p>
+
+        <p><strong>Duration:</strong> 2023 - 2027</p>
+
+        <p><strong>University:</strong> Anna University</p>
+
+        <p><strong>CGPA:</strong> 8.5</p>
+
+    </div>
+
+    <div class="edu-card">
+
+        <h3>Higher Secondary (HSC)</h3>
+
+        <p><strong>School:</strong> Your School Name</p>
+
+        <p><strong>Year:</strong> 2023</p>
+
+        <p><strong>Percentage:</strong> 85%</p>
+
+    </div>
+
+    <div class="edu-card">
+
+        <h3>Secondary School (SSLC)</h3>
+
+        <p><strong>School:</strong> Your School Name</p>
+
+        <p><strong>Year:</strong> 2021</p>
+
+        <p><strong>Percentage:</strong> 90%</p>
+
+    </div>
+
+</section>
+
+</section>
+
+   <section id="skills" data-aos="zoom-in">
+
+<h2>Skills</h2>
+
+<div class="skill">
+    <p>HTML</p>
+    <div class="bar">
+        <div class="fill html"></div>
+    </div>
+</div>
+
+<div class="skill">
+    <p>CSS</p>
+    <div class="bar">
+        <div class="fill css"></div>
+    </div>
+</div>
+
+<div class="skill">
+    <p>JavaScript</p>
+    <div class="bar">
+        <div class="fill js"></div>
+    </div>
+</div>
+
+<div class="skill">
+    <p>Node.js</p>
+    <div class="bar">
+        <div class="fill node"></div>
+    </div>
+</div>
+
+<div class="skill">
+    <p>MongoDB</p>
+    <div class="bar">
+        <div class="fill mongo"></div>
+    </div>
+</div>
+
+</section>
+
+    <section id="projects" data-aos="fade-left">
+        <h2>Projects</h2>
+
+        <div id="project-list"></div>
+
+    </section>
+
+   <section id="contact" data-aos="fade-up">
+
+<h2>Contact Me</h2>
+
+<form id="contact-form">
+
+<input
+id="name"
+type="text"
+placeholder="Your Name"
+required
+>
+
+<input
+id="email"
+type="email"
+placeholder="Your Email"
+required
+>
+
+<textarea
+id="message"
+placeholder="Your Message"
+required
+></textarea>
+
+<button type="submit">
+
+Send Message
+
+</button>
+
+</form>
+
+<div class="contact-details">
+
+<h3>Contact Details</h3>
+
+<p>📧 sriamudhavalli@gmail.com</p>
+
+<p>📱 +91 9876543210</p>
+
+<p>
+
+💼
+
+<a href="https://www.linkedin.com/in/sri-amudhavalli-m-40172732b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
+    LinkedIn Profile
+</a>
+
+</p>
+
+<p>
+
+💻
+
+<a href="https://github.com/sriamudhavalli02-lang" target="_blank">
+    GitHub Profile
+</a>
+
+</p>
+<div class="social">
+
+    <a href="https://www.linkedin.com/in/sri-amudhavalli-m-40172732b" target="_blank">
+        <i class="fab fa-linkedin"></i>
+    </a>
+
+    <a href="https://github.com/sriamudhavalli02-lang" target="_blank">
+        <i class="fab fa-github"></i>
+    </a>
+
+    <a href="mailto:sriamudhavalli@gmail.com">
+        <i class="fas fa-envelope"></i>
+    </a>
+
+</div>
+
+</div>
+
+</section>
+
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+    duration:1000,
+    once:true
+});
+</script>
+
+</body>
+</html>
