@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
 
@@ -29,6 +31,8 @@ app.get("/projects", async (req, res) => {
         const data = await Project.find();
         res.json(data);
     } catch (err) {
+        console.log(err);
+
         res.status(500).json({
             success: false,
             message: "Failed to fetch projects"
@@ -47,6 +51,8 @@ app.post("/projects", async (req, res) => {
             message: "Project Added Successfully"
         });
     } catch (err) {
+        console.log(err);
+
         res.status(500).json({
             success: false,
             message: "Error adding project"
@@ -103,7 +109,11 @@ app.get("/api/contact", async (req, res) => {
     }
 });
 
-const PORT = 5000;
+// =======================
+// Start Server
+// =======================
+
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
     console.log(`Server Running on Port ${PORT}`);

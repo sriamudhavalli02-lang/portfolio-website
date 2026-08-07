@@ -1,28 +1,40 @@
 // ==========================
 // Projects
 // ==========================
+
 const projects = [
     {
         title: "Personal Portfolio Website",
-        description: "A full-stack portfolio website built using HTML, CSS, JavaScript and Node.js."
+        description:
+            "A full-stack portfolio website built using HTML, CSS, JavaScript and Node.js."
     },
     {
         title: "Bus Tracking System",
-        description: "A web application to track college buses in real-time."
+        description:
+            "A web application to track college buses in real-time."
     },
     {
         title: "Women Safety App",
-        description: "An emergency safety application with live location sharing."
+        description:
+            "An emergency safety application with live location sharing."
     }
 ];
 
+
+// ==========================
 // Display Projects
+// ==========================
+
 const projectList = document.getElementById("project-list");
 
 if (projectList) {
-    projects.forEach(project => {
+
+    projects.forEach((project) => {
+
         const card = document.createElement("div");
+
         card.classList.add("project-card");
+
         card.setAttribute("data-aos", "zoom-in");
 
         card.innerHTML = `
@@ -31,12 +43,16 @@ if (projectList) {
         `;
 
         projectList.appendChild(card);
+
     });
+
 }
+
 
 // ==========================
 // Contact Form
 // ==========================
+
 const contactForm = document.getElementById("contact-form");
 
 if (contactForm) {
@@ -49,47 +65,65 @@ if (contactForm) {
         const email = document.getElementById("email").value.trim();
         const message = document.getElementById("message").value.trim();
 
+
+        // Check empty fields
+        if (!name || !email || !message) {
+
+            alert("Please fill all the fields.");
+
+            return;
+
+        }
+
+
         try {
 
-            const response = await fetch("http://localhost:5000/api/contact", {
+            const response = await fetch(
+                "http://localhost:5000/api/contact",
+                {
+                    method: "POST",
 
-                method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
 
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        message: message
+                    })
+                }
+            );
 
-                body: JSON.stringify({
-                    name,
-                    email,
-                    message
-                })
 
-            });
+            console.log("Status:", response.status);
 
-            console.log("Status :", response.status);
 
             const data = await response.json();
 
-            console.log(data);
+            console.log("Server Response:", data);
+
 
             if (response.ok) {
 
-                alert(data.message);
+                alert(data.message || "Message sent successfully!");
 
                 contactForm.reset();
 
             } else {
 
-                alert(data.message);
+                alert(data.message || "Something went wrong.");
 
             }
 
+
         } catch (error) {
 
-            console.error("Error :", error);
+            console.error("Error:", error);
 
-            alert("Failed to send message");
+            alert(
+                "Failed to connect to backend. Make sure your backend server is running."
+            );
 
         }
 
@@ -97,37 +131,51 @@ if (contactForm) {
 
 }
 
+
 // ==========================
 // View Projects Button
 // ==========================
+
 const viewBtn = document.getElementById("projectBtn");
 
 if (viewBtn) {
 
     viewBtn.addEventListener("click", () => {
 
-        document.getElementById("projects").scrollIntoView({
+        const projectsSection = document.getElementById("projects");
 
-            behavior: "smooth"
+        if (projectsSection) {
 
-        });
+            projectsSection.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
 
     });
 
 }
 
+
 // ==========================
 // Typing Effect
 // ==========================
+
 const text = "Full Stack Developer | CSBS Student";
 
 let i = 0;
 
 function typing() {
 
+    const typingElement = document.getElementById("typing");
+
+    if (!typingElement) {
+        return;
+    }
+
     if (i < text.length) {
 
-        document.getElementById("typing").innerHTML += text.charAt(i);
+        typingElement.innerHTML += text.charAt(i);
 
         i++;
 
